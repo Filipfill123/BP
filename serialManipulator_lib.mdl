@@ -1,0 +1,2305 @@
+Library {
+  Name			  "serialManipulator_lib"
+  Version		  6.3
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1250"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Apr 23 14:38:37 2014"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "MartinSvejda"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Jul 30 07:51:00 2015"
+  ModelVersionFormat	  "1.%<AutoIncrement:81>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  StrictBusMsg		  "Warning"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      MATLABFcn
+      MATLABFcn		      "sin"
+      OutputDimensions	      "-1"
+      OutputSignalType	      "auto"
+      Output1D		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      Selector
+      InputType		      "Vector"
+      IndexMode		      "One-based"
+      ElementSrc	      "Internal"
+      Elements		      "1"
+      RowSrc		      "Internal"
+      Rows		      "1"
+      ColumnSrc		      "Internal"
+      Columns		      "1"
+      InputPortWidth	      "-1"
+      IndexIsStartValue	      off
+      OutputPortSize	      "1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "serialManipulator_lib"
+    Location		    [970, 82, 1910, 1131]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Base Compensation"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [85, 470, 190, 525]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Links"
+      MaskDescription	      "Base Compensation od j-th Chain"
+      MaskHelp		      "Kompenzace zakladny j-th Chain dane parametry L"
+"inks{j}{1}"
+      MaskPromptString	      "Chain order"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "j=@1;"
+      MaskDisplay	      "fprintf([num2str(j),'. Chain'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1"
+      System {
+	Name			"Base Compensation"
+	Location		[1316, 173, 1801, 642]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link_i"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [55, 175, 95, 235]
+	  Orientation		  "up"
+	  BackgroundColor	  "red"
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Bodies/Body"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "workingframe"
+	  RightPortType		  "workingframe"
+	  LConnTagsString	  "CS1"
+	  RConnTagsString	  "CS2|CS3"
+	  ClassName		  "Body"
+	  DialogClass		  "MechanicalBodyBlock"
+	  Mass			  "1e-10"
+	  MassUnits		  "kg"
+	  InertiaUnits		  "kg*m^2"
+	  Inertia		  "1e-10*eye(3)"
+	  Shape			  "Cylinder"
+	  ShapeDims		  "[1 1]"
+	  ShapeUnits		  "m"
+	  ShapeUse		  "false"
+	  Density		  "1"
+	  DensityUnits		  "kg/m^3"
+	  DensityUse		  "false"
+	  CG			  "Left$CG$Links{j}{1}.A$WORLD$WORLD$m$Links{j"
+"}{1}.R$3x3 Transform$deg$WORLD$false"
+	  WorkingFrames		  "Left$CS1$Links{j}{1}.A$WORLD$WORLD$m$Links{"
+"j}{1}.R$3x3 Transform$deg$WORLD$true#Right$CS2$Links{j}{1}.B$WORLD$WORLD$m$Li"
+"nks{j}{1}.R$3x3 Transform$deg$WORLD$true#Right$CS3$Links{j}{1}.B$WORLD$WORLD$"
+"m$Links{j}{1}.R$3x3 Transform$deg$WORLD$true"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Weld"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [50, 270, 100, 320]
+	  Orientation		  "up"
+	  SourceBlock		  "mblibv1/Joints/Weld"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0"
+	  RConnTagsString	  "__newr0"
+	  NumSAPorts		  "0"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "weld"
+	  PrimitiveProps	  "W$INERTIAL$[0 0 0]$weld"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "CS F0"
+	  Position		  [40, 60, 70, 75]
+	  Orientation		  "down"
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  " CS F0"
+	  Position		  [105, 60, 135, 75]
+	  Orientation		  "down"
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "CS Fb"
+	  Position		  [60, 350, 90, 365]
+	  Orientation		  "up"
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  " CS F0"
+	  SrcPort		  RConn1
+	  Points		  [-35, 0]
+	  DstBlock		  "Link_i"
+	  DstPort		  RConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "CS F0"
+	  SrcPort		  RConn1
+	  Points		  [10, 0]
+	  DstBlock		  "Link_i"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "CS Fb"
+	  SrcPort		  RConn1
+	  DstBlock		  "Weld"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Weld"
+	  SrcPort		  RConn1
+	  DstBlock		  "Link_i"
+	  DstPort		  LConn1
+	}
+	Annotation {
+	  Name			  "Base Compensation"
+	  Position		  [91, 12]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "End Effector Compensation"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [85, 560, 190, 615]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Links"
+      MaskDescription	      "End Effector Compensation of j-th Chain"
+      MaskHelp		      "Kompenzace konc. ef j-th Chain dane parametry L"
+"inks{j}{end}"
+      MaskPromptString	      "Chain order"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "j=@1;"
+      MaskDisplay	      "fprintf([num2str(j),'. Chain'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1"
+      System {
+	Name			"End Effector Compensation"
+	Location		[1316, 173, 1801, 642]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link_i"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [55, 175, 95, 235]
+	  Orientation		  "up"
+	  BackgroundColor	  "red"
+	  ShowName		  off
+	  SourceBlock		  "mblibv1/Bodies/Body"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "workingframe"
+	  RightPortType		  "workingframe"
+	  LConnTagsString	  "CS1"
+	  RConnTagsString	  "CS2|CS3"
+	  ClassName		  "Body"
+	  DialogClass		  "MechanicalBodyBlock"
+	  Mass			  "1e-10"
+	  MassUnits		  "kg"
+	  InertiaUnits		  "kg*m^2"
+	  Inertia		  "1e-10*eye(3)"
+	  Shape			  "Cylinder"
+	  ShapeDims		  "[1 1]"
+	  ShapeUnits		  "m"
+	  ShapeUse		  "false"
+	  Density		  "1"
+	  DensityUnits		  "kg/m^3"
+	  DensityUse		  "false"
+	  CG			  "Left$CG$Links{j}{end}.A$WORLD$WORLD$m$Links"
+"{j}{end}.R$3x3 Transform$deg$WORLD$false"
+	  WorkingFrames		  "Left$CS1$Links{j}{end}.A$WORLD$WORLD$m$Link"
+"s{j}{end}.R$3x3 Transform$deg$WORLD$true#Right$CS2$Links{j}{end}.B$WORLD$WORL"
+"D$m$Links{j}{end}.R$3x3 Transform$deg$WORLD$true#Right$CS3$Links{j}{end}.B$WO"
+"RLD$WORLD$m$Links{j}{end}.R$3x3 Transform$deg$WORLD$true"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Weld"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [50, 275, 100, 325]
+	  Orientation		  "up"
+	  SourceBlock		  "mblibv1/Joints/Weld"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0"
+	  RConnTagsString	  "__newr0"
+	  NumSAPorts		  "0"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "weld"
+	  PrimitiveProps	  "W$INERTIAL$[0 0 0]$weld"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "CS Fe"
+	  Position		  [40, 60, 70, 75]
+	  Orientation		  "down"
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  " CS Fe"
+	  Position		  [105, 60, 135, 75]
+	  Orientation		  "down"
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "CS Fn"
+	  Position		  [60, 365, 90, 380]
+	  Orientation		  "up"
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  " CS Fe"
+	  SrcPort		  RConn1
+	  Points		  [-35, 0]
+	  DstBlock		  "Link_i"
+	  DstPort		  RConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "CS Fe"
+	  SrcPort		  RConn1
+	  Points		  [10, 0]
+	  DstBlock		  "Link_i"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "CS Fn"
+	  SrcPort		  RConn1
+	  DstBlock		  "Weld"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Weld"
+	  SrcPort		  RConn1
+	  DstBlock		  "Link_i"
+	  DstPort		  LConn1
+	}
+	Annotation {
+	  Name			  "End Effector Compensation"
+	  Position		  [91, 12]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Manipulator Joint\n(Actuation: Motion)"
+      Ports		      [1, 3, 0, 0, 0, 1, 1]
+      Position		      [50, 183, 255, 257]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Joints"
+      MaskDescription	      "i-th ManipulatorJoint of j-th Chain"
+      MaskHelp		      "Vytvori R ci P kloub s prislusnym smerem osy ro"
+"tace/translace z parametru ve strukture Links{j}{i}"
+      MaskPromptString	      "Chain order|Joint order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "j=@1;i=@2;"
+      MaskDisplay	      "fprintf(['\\n',num2str(j),'. Chain \\n',num2str"
+"(i),'. Joint\\n'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|3"
+      MaskTabNameString	      ","
+      System {
+	Name			"Manipulator Joint\n(Actuation: Motion)"
+	Location		[1068, 110, 1852, 673]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "[pos;vel;accel]"
+	  Position		  [420, 83, 450, 97]
+	  Orientation		  "left"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Cylindrical"
+	  Ports			  [0, 0, 0, 0, 0, 3, 3]
+	  Position		  [59, 75, 111, 125]
+	  Orientation		  "up"
+	  SourceBlock		  "mblibv1/Joints/Cylindrical"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0|SA1|SA2"
+	  RConnTagsString	  "__newr0|SA1|SA2"
+	  NumSAPorts		  "4"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic_revolute"
+	  PrimitiveProps	  "P1$WORLD$Links{j}{i+1}.jointAxis$prismatic#"
+"R1$WORLD$Links{j}{i+1}.jointAxis$revolute"
+	  ClassName		  "CylindricalJoint"
+	  DialogClass		  "JointBlock"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain_P"
+	  Position		  [265, 125, 295, 155]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  Gain			  "Links{j}{i+1}.jointType_sigma"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain_P1"
+	  Position		  [270, 275, 300, 305]
+	  Gain			  "Links{j}{i+1}.jointType_sigma"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain_R"
+	  Position		  [265, 35, 295, 65]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  Gain			  "1-Links{j}{i+1}.jointType_sigma"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain_R1"
+	  Position		  [270, 195, 300, 225]
+	  Gain			  "1-Links{j}{i+1}.jointType_sigma"
+	  Multiplication	  "Matrix(K*u)"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Actuator_P"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [180, 120, 220, 160]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Actuato"
+"r"
+	  SourceType		  "msb"
+	  ShowPortLabels	  "on"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Motion"
+	  AngleUnits		  "rad"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "off"
+	  Width			  "3"
+	  ClassName		  "JointActuator"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  Primitive		  "P1"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Actuator_R"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [175, 30, 215, 70]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Actuato"
+"r"
+	  SourceType		  "msb"
+	  ShowPortLabels	  "on"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Motion"
+	  AngleUnits		  "rad"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "off"
+	  Width			  "3"
+	  ClassName		  "JointActuator"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  Primitive		  "R1"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Sensor_P"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [180, 260, 225, 320]
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "msb"
+	  ShowPortLabels	  "on"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "on"
+	  Pose			  "off"
+	  Angle			  "off"
+	  AngleUnits		  "rad"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPosition		  "off"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "off"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[ 1 3 3 ]"
+	  ActiveIO		  "off"
+	  Width			  "7"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "P1"
+	  Force			  "on"
+	  ForceUnits		  "N"
+	  Torque		  "on"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "on"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "on"
+	  ReactionMomentUnits	  "N-m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Sensor_R"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [180, 180, 225, 240]
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "msb"
+	  ShowPortLabels	  "on"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "on"
+	  Pose			  "off"
+	  Angle			  "off"
+	  AngleUnits		  "rad"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPosition		  "off"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "off"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[ 1 3 3 ]"
+	  ActiveIO		  "off"
+	  Width			  "7"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "R1"
+	  Force			  "on"
+	  ForceUnits		  "N"
+	  Torque		  "on"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "on"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "on"
+	  ReactionMomentUnits	  "N-m"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [440, 243, 480, 267]
+	  Elements		  "[1]"
+	  Columns		  "7"
+	  InputPortWidth	  "7"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [440, 283, 480, 307]
+	  Elements		  "[2:4]"
+	  Columns		  "7"
+	  InputPortWidth	  "7"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector5"
+	  Ports			  [1, 1]
+	  Position		  [440, 323, 480, 347]
+	  Elements		  "[5:7]"
+	  Columns		  "7"
+	  InputPortWidth	  "7"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [335, 245, 355, 265]
+	  ShowName		  off
+	  IconShape		  "round"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "F"
+	  Position		  [25, 30, 55, 45]
+	  Orientation		  "down"
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "B"
+	  Position		  [25, 155, 55, 170]
+	  Orientation		  "up"
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Computed force/torque"
+	  Position		  [525, 248, 555, 262]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Reaction torque"
+	  Position		  [525, 288, 555, 302]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ReactionForce"
+	  Position		  [525, 328, 555, 342]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Sensor_P"
+	  SrcPort		  LConn1
+	  Points		  [-80, 0]
+	  DstBlock		  "Cylindrical"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Cylindrical"
+	  SrcPort		  LConn3
+	  Points		  [0, 70]
+	  DstBlock		  "Joint Sensor_R"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Cylindrical"
+	  SrcPort		  RConn2
+	  Points		  [0, -10]
+	  DstBlock		  "Joint Actuator_R"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Cylindrical"
+	  SrcPort		  RConn3
+	  Points		  [50, 0; 0, 80]
+	  DstBlock		  "Joint Actuator_P"
+	  DstPort		  RConn1
+	}
+	Line {
+	  SrcBlock		  "Gain_R"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Joint Actuator_R"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain_P"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Joint Actuator_P"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor_R"
+	  SrcPort		  1
+	  DstBlock		  "Gain_R1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain_P1"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Gain_R1"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor_P"
+	  SrcPort		  1
+	  DstBlock		  "Gain_P1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [0, 0; 50, 0]
+	  Branch {
+	    DstBlock		    "Selector3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      DstBlock		      "Selector4"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 40]
+	      DstBlock		      "Selector5"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "F"
+	  SrcPort		  RConn1
+	  Points		  [0, 0]
+	  DstBlock		  "Cylindrical"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "B"
+	  SrcPort		  RConn1
+	  Points		  [0, 0]
+	  DstBlock		  "Cylindrical"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Computed force/torque"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Reaction torque"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector5"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "ReactionForce"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "[pos;vel;accel]"
+	  SrcPort		  1
+	  Points		  [0, 0; -55, 0]
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "Gain_P"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Gain_R"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Manipulator Link"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [85, 91, 230, 144]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Links"
+      MaskDescription	      "i-th Manipulator Link of j-th Chain"
+      MaskHelp		      "Vytvori Link s prislusnymy parametry (pocatecni"
+",koncovy bod, s.s., hmotnost, moment setrvacnosti, teziste) z parametru ve st"
+"rukture Links{j}{i}"
+      MaskPromptString	      "Chain order|Link order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "j=@1;i=@2;"
+      MaskDisplay	      "fprintf(['\\n',num2str(j),'. Chain \\n',num2str"
+"(i),'. Link\\n'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|3"
+      MaskTabNameString	      ","
+      System {
+	Name			"Manipulator Link"
+	Location		[1316, 173, 1801, 642]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [55, 175, 95, 235]
+	  Orientation		  "up"
+	  BackgroundColor	  "red"
+	  SourceBlock		  "mblibv1/Bodies/Body"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "workingframe"
+	  RightPortType		  "workingframe"
+	  LConnTagsString	  "CS1"
+	  RConnTagsString	  "CS2|CS3"
+	  ClassName		  "Body"
+	  DialogClass		  "MechanicalBodyBlock"
+	  Mass			  "Links{j}{i+1}.mass"
+	  MassUnits		  "kg"
+	  InertiaUnits		  "kg*m^2"
+	  Inertia		  "Links{j}{i+1}.inertiaTensor"
+	  Shape			  "Cylinder"
+	  ShapeDims		  "[1 1]"
+	  ShapeUnits		  "m"
+	  ShapeUse		  "false"
+	  Density		  "1"
+	  DensityUnits		  "kg/m^3"
+	  DensityUse		  "false"
+	  CG			  "Left$CG$Links{j}{i+1}.gravityCenter$WORLD$W"
+"ORLD$m$Links{j}{i+1}.R$3x3 Transform$deg$WORLD$false"
+	  WorkingFrames		  "Left$CS1$Links{j}{i+1}.A$WORLD$WORLD$m$Link"
+"s{j}{i+1}.R$3x3 Transform$deg$WORLD$true#Right$CS2$Links{j}{i+1}.B$WORLD$WORL"
+"D$m$Links{j}{i+1}.R$3x3 Transform$deg$WORLD$true#Right$CS3$Links{j}{i+1}.B$WO"
+"RLD$WORLD$m$Links{j}{i+1}.R$3x3 Transform$deg$WORLD$true"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "CS Fi"
+	  Position		  [40, 60, 70, 75]
+	  Orientation		  "down"
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  " CS Fi"
+	  Position		  [105, 60, 135, 75]
+	  Orientation		  "down"
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "CS Fi-1"
+	  Position		  [40, 295, 70, 310]
+	  Orientation		  "up"
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "CS Fi"
+	  SrcPort		  RConn1
+	  Points		  [10, 0]
+	  DstBlock		  "Link"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  " CS Fi"
+	  SrcPort		  RConn1
+	  Points		  [-35, 0]
+	  DstBlock		  "Link"
+	  DstPort		  RConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "CS Fi-1"
+	  SrcPort		  RConn1
+	  Points		  [0, -30]
+	  DstBlock		  "Link"
+	  DstPort		  LConn1
+	}
+	Annotation {
+	  Name			  "Model of the i-th manipulator link"
+	  Position		  [91, 12]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Manipulator P Joint\n(Actuation: Passive)"
+      Ports		      [0, 6, 0, 0, 0, 1, 1]
+      Position		      [315, 198, 540, 262]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Joints"
+      MaskDescription	      "PASSIVE P i-th Manipulator Joint of j-Chain"
+      MaskHelp		      "Vytvori P kloub s prislusnym smerem osy transla"
+"ce z parametru ve strukture Links{j}{i} - kloub je uvazovana jako pasivni\n\n"
+"Pozor, P - joint - nutno dodrzet (nekontroluje se s nastavenim v Links{j}{i) "
+"!!!\nNelze v SimMech vytvorit univerzalne!"
+      MaskPromptString	      "Chain order|Joint order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "j=@1;i=@2;"
+      MaskDisplay	      "fprintf(['\\n',num2str(j),'. Chain \\n',num2str"
+"(i),'. Joint\\n'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|1"
+      MaskTabNameString	      ","
+      System {
+	Name			"Manipulator P Joint\n(Actuation: Passive)"
+	Location		[249, 548, 939, 1053]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Sensor_P"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [180, 220, 225, 280]
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "msb"
+	  ShowPortLabels	  "on"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "on"
+	  Pose			  "off"
+	  Angle			  "off"
+	  AngleUnits		  "rad"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "on"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  OutputVector		  "[ 1 1 1 1 3 3 ]"
+	  ActiveIO		  "off"
+	  Width			  "7"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "P1"
+	  Force			  "on"
+	  ForceUnits		  "N"
+	  Torque		  "on"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "on"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "on"
+	  ReactionMomentUnits	  "N-m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Prismatic"
+	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Position		  [57, 70, 108, 120]
+	  Orientation		  "up"
+	  SourceBlock		  "mblibv1/Joints/Prismatic"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0|SA1"
+	  RConnTagsString	  "__newr0|SA1"
+	  NumSAPorts		  "2"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic"
+	  PrimitiveProps	  "P1$WORLD$Links{j}{i+1}.jointAxis$prismatic"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  Ports			  [1, 1]
+	  Position		  [445, 68, 485, 92]
+	  Elements		  "[1]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector2"
+	  Ports			  [1, 1]
+	  Position		  [445, 113, 485, 137]
+	  Elements		  "[2]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [445, 238, 485, 262]
+	  Elements		  "[4]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [445, 278, 485, 302]
+	  Elements		  "[5:7]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector5"
+	  Ports			  [1, 1]
+	  Position		  [445, 318, 485, 342]
+	  Elements		  "[8:10]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector6"
+	  Ports			  [1, 1]
+	  Position		  [445, 158, 485, 182]
+	  Elements		  "[3]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "B"
+	  Position		  [25, 150, 55, 165]
+	  Orientation		  "up"
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "F"
+	  Position		  [25, 25, 55, 40]
+	  Orientation		  "down"
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Computed force"
+	  Position		  [520, 243, 550, 257]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Reaction torque"
+	  Position		  [520, 283, 550, 297]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ReactionForce"
+	  Position		  [520, 323, 550, 337]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Pos"
+	  Position		  [520, 73, 550, 87]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vel"
+	  Position		  [520, 118, 550, 132]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Accel"
+	  Position		  [520, 163, 550, 177]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "B"
+	  SrcPort		  RConn1
+	  DstBlock		  "Prismatic"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "F"
+	  SrcPort		  RConn1
+	  DstBlock		  "Prismatic"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Sensor_P"
+	  SrcPort		  LConn1
+	  Points		  [-70, 0]
+	  DstBlock		  "Prismatic"
+	  DstPort		  LConn2
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Computed force"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Reaction torque"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector5"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "ReactionForce"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor_P"
+	  SrcPort		  1
+	  Points		  [185, 0]
+	  Branch {
+	    DstBlock		    "Selector3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      DstBlock		      "Selector4"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 40]
+	      DstBlock		      "Selector5"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -85]
+	    Branch {
+	      Points		      [0, -40]
+	      Branch {
+		Points			[0, -45]
+		DstBlock		"Selector1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Selector2"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 5]
+	      DstBlock		      "Selector6"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Pos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Vel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector6"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Accel"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Manipulator R Joint\n(Actuation: Passive)"
+      Ports		      [0, 6, 0, 0, 0, 1, 1]
+      Position		      [315, 299, 535, 361]
+      AncestorBlock	      "serialManipulator_lib/Manipulator P Joint\n(Act"
+"uation: Passive)"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Joints"
+      MaskDescription	      "PASSIVE R i-th Manipulator Joint of j-th Chain"
+      MaskHelp		      "Vytvori R kloub s prislusnym smerem osy rotace "
+"z parametru ve strukture Links{j}{i} - kloub je uvazovana jako pasivni\n\nPoz"
+"or, R - joint - nutno dodrzet (nekontroluje se s nastavenim v Links{j}{i) !!!"
+"\nNelze v SimMech vytvorit univerzalne!"
+      MaskPromptString	      "Chain order|Joint order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "j=@1;i=@2;"
+      MaskDisplay	      "fprintf(['\\n',num2str(j),'. Chain \\n',num2str"
+"(i),'. Joint\\n'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|1"
+      MaskTabNameString	      ","
+      System {
+	Name			"Manipulator R Joint\n(Actuation: Passive)"
+	Location		[249, 548, 939, 1053]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Sensor_P"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [175, 220, 220, 280]
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "msb"
+	  ShowPortLabels	  "on"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "on"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "rad"
+	  ArcVelocity		  "on"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAcceleration	  "on"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "off"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  OutputVector		  "[ 1 1 1 1 3 3 ]"
+	  ActiveIO		  "off"
+	  Width			  "7"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "R1"
+	  Force			  "on"
+	  ForceUnits		  "N"
+	  Torque		  "on"
+	  TorqueUnits		  "N-m"
+	  ReferenceFrame	  "Absolute (INERTIAL)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "on"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "on"
+	  ReactionMomentUnits	  "N-m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Revolute"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [52, 70, 103, 120]
+	  Orientation		  "up"
+	  SourceBlock		  "mblibv1/Joints/Revolute"
+	  SourceType		  "msb"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0|SA1"
+	  RConnTagsString	  "__newr0"
+	  NumSAPorts		  "1"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "revolute"
+	  PrimitiveProps	  "R1$WORLD$Links{j}{i+1}.jointAxis$revolute"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector1"
+	  Ports			  [1, 1]
+	  Position		  [435, 68, 475, 92]
+	  Elements		  "[1]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector2"
+	  Ports			  [1, 1]
+	  Position		  [435, 113, 475, 137]
+	  Elements		  "[2]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [435, 238, 475, 262]
+	  Elements		  "[4]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [435, 278, 475, 302]
+	  Elements		  "[5:7]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector5"
+	  Ports			  [1, 1]
+	  Position		  [435, 318, 475, 342]
+	  Elements		  "[8:10]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector6"
+	  Ports			  [1, 1]
+	  Position		  [435, 158, 475, 182]
+	  Elements		  "[3]"
+	  Columns		  "7"
+	  InputPortWidth	  "10"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "B"
+	  Position		  [25, 150, 55, 165]
+	  Orientation		  "up"
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "F"
+	  Position		  [25, 25, 55, 40]
+	  Orientation		  "down"
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Computed force"
+	  Position		  [520, 243, 550, 257]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Reaction torque"
+	  Position		  [520, 283, 550, 297]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ReactionForce"
+	  Position		  [520, 323, 550, 337]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Pos"
+	  Position		  [520, 73, 550, 87]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vel"
+	  Position		  [520, 118, 550, 132]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Accel"
+	  Position		  [520, 163, 550, 177]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Sensor_P"
+	  SrcPort		  LConn1
+	  Points		  [-70, 0]
+	  DstBlock		  "Revolute"
+	  DstPort		  LConn2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "F"
+	  SrcPort		  RConn1
+	  DstBlock		  "Revolute"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "B"
+	  SrcPort		  RConn1
+	  DstBlock		  "Revolute"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Computed force"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Reaction torque"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector5"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "ReactionForce"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor_P"
+	  SrcPort		  1
+	  Points		  [0, 0; 180, 0]
+	  Branch {
+	    DstBlock		    "Selector3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      DstBlock		      "Selector4"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 40]
+	      DstBlock		      "Selector5"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -85]
+	    Branch {
+	      Points		      [0, -40]
+	      Branch {
+		Points			[0, -45]
+		DstBlock		"Selector1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Selector2"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 5]
+	      DstBlock		      "Selector6"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  DstBlock		  "Pos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Vel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector6"
+	  SrcPort		  1
+	  DstBlock		  "Accel"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "forwardDynamics"
+      Ports		      [3, 1]
+      Position		      [600, 90, 890, 140]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Serial Manipulator Inverse Dynamic Model"
+      MaskDescription	      "Inverse Dynamic Model for generalized serial ma"
+"nipulator"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"forwardDynamics"
+	Location		[814, 274, 1659, 499]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "joints motion:\n[q,dq]"
+	  Position		  [85, 28, 115, 42]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "joints force/moment:\ntau"
+	  Position		  [85, 78, 115, 92]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "endEff force (fe), torque (ue), w.r.Fb:\n[f"
+";u]:"
+	  Position		  [85, 143, 115, 157]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  MATLABFcn
+	  Name			  "MATLAB Fcn"
+	  Position		  [610, 35, 670, 65]
+	  MATLABFcn		  "forwardDynamicModel(u(1:end-2,1:2),u(1:end-"
+"2,3),[u(end-1,:)';u(end,:)'],kinPar{1},dynPar{1})"
+	  OutputDimensions	  "[Links{1}{1}.numOfLinks]"
+	  Output1D		  off
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction"
+	  Ports			  [1, 1]
+	  Position		  [360, 115, 390, 145]
+	  Operator		  "transpose"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction1"
+	  Ports			  [1, 1]
+	  Position		  [360, 155, 390, 185]
+	  Operator		  "transpose"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [3, 1]
+	  Position		  [440, 29, 495, 71]
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "3"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation2"
+	  Ports			  [2, 1]
+	  Position		  [250, 24, 305, 66]
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "2"
+	  catMethod		  "Horizontal"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [265, 118, 305, 142]
+	  InputType		  "Matrix"
+	  Elements		  "[:,1]"
+	  Rows			  "1:3"
+	  InputPortWidth	  "6"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [265, 158, 305, 182]
+	  InputType		  "Matrix"
+	  Elements		  "[:,1]"
+	  Rows			  "4:6"
+	  InputPortWidth	  "6"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "joint acceleration:\nddq"
+	  Position		  [755, 43, 785, 57]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "joints force/moment:\ntau"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, -30]
+	  DstBlock		  "Matrix\nConcatenation2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation2"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, -10]
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "joints motion:\n[q,dq]"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -80]
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction1"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "MATLAB Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "endEff force (fe), torque (ue), w.r.Fb:\n[f"
+";u]:"
+	  SrcPort		  1
+	  Points		  [0, 0; 65, 0]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Selector4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -20]
+	    DstBlock		    "Selector3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "MATLAB Fcn"
+	  SrcPort		  1
+	  DstBlock		  "joint acceleration:\nddq"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "[[q,dq,tau];[f';u']]"
+	  Position		  [548, 36]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "inverseDynamics"
+      Ports		      [2, 1]
+      Position		      [600, 162, 890, 198]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Serial Manipulator Inverse Dynamic Model"
+      MaskDescription	      "Inverse Dynamic Model for generalized serial ma"
+"nipulator"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"inverseDynamics"
+	Location		[885, 659, 1730, 884]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "joints motion:\n[q,dq,ddq]"
+	  Position		  [85, 28, 115, 42]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "endEff force (fe), torque (ue), w.r.Fb:\n[f"
+";u]:"
+	  Position		  [85, 73, 115, 87]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  MATLABFcn
+	  Name			  "MATLAB Fcn"
+	  Position		  [615, 35, 675, 65]
+	  MATLABFcn		  "inverseDynamicModel(u(1:end-2,:),[u(end-1,:"
+")';u(end,:)'],kinPar{1},dynPar{1})"
+	  Output1D		  off
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction"
+	  Ports			  [1, 1]
+	  Position		  [360, 45, 390, 75]
+	  Operator		  "transpose"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction1"
+	  Ports			  [1, 1]
+	  Position		  [360, 85, 390, 115]
+	  Operator		  "transpose"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Matrix\nConcatenation1"
+	  Ports			  [3, 1]
+	  Position		  [440, 29, 495, 71]
+	  SourceBlock		  "simulink/Math\nOperations/Matrix\nConcatena"
+"tion"
+	  SourceType		  "Matrix Concatenation"
+	  numInports		  "3"
+	  catMethod		  "Vertical"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector3"
+	  Ports			  [1, 1]
+	  Position		  [265, 48, 305, 72]
+	  InputType		  "Matrix"
+	  Elements		  "[:,1]"
+	  Rows			  "1:3"
+	  InputPortWidth	  "6"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  Ports			  [1, 1]
+	  Position		  [265, 88, 305, 112]
+	  InputType		  "Matrix"
+	  Elements		  "[:,1]"
+	  Rows			  "4:6"
+	  InputPortWidth	  "6"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "joint forces/torques:\ntau"
+	  Position		  [755, 43, 785, 57]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  DstBlock		  "Math\nFunction1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Math\nFunction1"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation1"
+	  SrcPort		  1
+	  DstBlock		  "MATLAB Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "endEff force (fe), torque (ue), w.r.Fb:\n[f"
+";u]:"
+	  SrcPort		  1
+	  Points		  [0, 0; 65, 0]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Selector4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -20]
+	    DstBlock		    "Selector3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "joints motion:\n[q,dq,ddq]"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Matrix\nConcatenation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MATLAB Fcn"
+	  SrcPort		  1
+	  DstBlock		  "joint forces/torques:\ntau"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "[[q,dq,ddq];[f';u']]"
+	  Position		  [548, 36]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "joint home position"
+      Ports		      [0, 1]
+      Position		      [85, 310, 230, 340]
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskHideContents	      off
+      MaskType		      "Link"
+      MaskDescription	      "i-th joint home position"
+      MaskPromptString	      "Chain order|Joint order"
+      MaskStyleString	      "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "j=@1;i=@2;"
+      MaskDisplay	      "fprintf(['\\n',num2str(j),'. Chain \\n',num2str"
+"(i),'. Link\\n'])"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "1|3"
+      MaskTabNameString	      ","
+      System {
+	Name			"joint home position"
+	Location		[125, 379, 387, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [25, 27, 165, 53]
+	  Value			  "[Links{j}{i+1}.qhome,0,0]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "jointHomePosition"
+	  Position		  [210, 33, 240, 47]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "jointHomePosition"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      Name		      "Manipulator SimMechanics Model"
+      Position		      [120, 55]
+      BackgroundColor	      "yellow"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "Manipulator Dynamic Model\nPOUZE PRO CHAIN 1"
+      Position		      [740, 55]
+      BackgroundColor	      "yellow"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "Manipulator SimMechanics Model"
+      Position		      [125, 445]
+      BackgroundColor	      "yellow"
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}
